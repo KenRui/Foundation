@@ -1,0 +1,6 @@
+/Foundation/Library
+.vs
+.idea
+*.pyc
+*.pyc.meta
+/Foundation/Temp
