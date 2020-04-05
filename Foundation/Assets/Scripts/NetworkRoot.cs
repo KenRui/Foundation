@@ -1,9 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Networking;
 
 public class NetworkRoot : MonoBehaviour
 {
 
+    public GameObject camera;
+    public GameObject ball;
+
+    private Vector3 offset;
+
+    private void Start()
+    {
+        offset = camera.transform.position - ball.transform.position;
+    }
 
     public void StartServer()
     {
@@ -38,5 +48,21 @@ public class NetworkRoot : MonoBehaviour
             Debug.Log("connet server.. ");
         });
         client.Connect("127.0.0.1", 20086);
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 moveDir = Vector3.zero;
+        moveDir.z = Input.GetAxis("Vertical");
+        moveDir.x = Input.GetAxis("Horizontal");
+
+        var v = moveDir * 1f;
+
+        ball.transform.position = ball.transform.position + v * Time.fixedDeltaTime;
+    }
+
+    private void LateUpdate()
+    {
+        // camera.transform.position = ball.transform.position + offset;
     }
 }
