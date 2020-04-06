@@ -50,13 +50,15 @@ public class NetworkRoot : MonoBehaviour
         client.Connect("127.0.0.1", 20086);
     }
 
+    private float ballSpeed = 2.0f;
+
     private void FixedUpdate()
     {
         Vector3 moveDir = Vector3.zero;
         moveDir.z = Input.GetAxis("Vertical");
         moveDir.x = Input.GetAxis("Horizontal");
 
-        var v = moveDir * 1f;
+        var v = moveDir * ballSpeed;
 
         ball.transform.position = ball.transform.position + v * Time.fixedDeltaTime;
     }
