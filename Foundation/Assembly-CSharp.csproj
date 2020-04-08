@@ -70,6 +70,8 @@
     <Compile Include="Assets\Scripts\Msg\CustomMsg.cs" />
     <Compile Include="Assets\Scripts\NetworkRoot.cs" />
     <Compile Include="Assets\Scripts\ServerManager.cs" />
+    <Compile Include="Assets\TestMono.cs" />
+    <None Include="Assets\Art\Shaders\outline.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Cooki/NetWork/Foundation/Foundation/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
