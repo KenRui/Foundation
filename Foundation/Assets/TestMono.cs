@@ -7,15 +7,14 @@ using UnityEngine.Rendering;
 public class TestMono : MonoBehaviour
 {
     public Material mat;
-    // Start is called before the first frame update
     private CommandBuffer cb;
-
     private Renderer render;
-    public Material defaultMat;
+    private SkinnedMeshRenderer sRender;
     private void Awake()
     {
         cb = new CommandBuffer();
-        render = this.GetComponent<SkinnedMeshRenderer>();
+        sRender = this.GetComponent<SkinnedMeshRenderer>();
+        render = sRender;
 
     }
 
@@ -40,8 +39,7 @@ public class TestMono : MonoBehaviour
     private void OnRenderObject()
     {
         cb.Clear();
-        cb.DrawRenderer(render, mat);
-        cb.DrawRenderer(render, defaultMat);
+        cb.DrawMesh(sRender.sharedMesh, sRender.localToWorldMatrix, mat);
         Graphics.ExecuteCommandBuffer(cb);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Networking;
+using XCore;
 
 public class NetworkRoot : MonoBehaviour
 {
@@ -65,6 +66,10 @@ public class NetworkRoot : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            OutlineFilter.EnableOutlineFilter();
+        }
         // camera.transform.position = ball.transform.position + offset;
     }
 }
