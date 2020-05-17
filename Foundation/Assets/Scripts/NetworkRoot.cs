@@ -38,6 +38,7 @@ public class NetworkRoot : MonoBehaviour
     {
         var connet = netMsg.conn;
         Debug.Log("Client Connect CLientIP:" + connet.address);
+        // ClientManager.Instance.GetHashCode();
     }
     
 

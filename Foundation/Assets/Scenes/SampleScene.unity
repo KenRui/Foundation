@@ -460,6 +460,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454279459}
   m_CullTransparentMesh: 0
+--- !u!1 &493284653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2633040655368773256, guid: 9f391c48d3aa74a4c9e1b39dee653610,
+    type: 3}
+  m_PrefabInstance: {fileID: 1005181284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &522264131
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 534669902}
-  ball: {fileID: 821211149}
+  ball: {fileID: 493284653}
 --- !u!4 &988788852
 Transform:
   m_ObjectHideFlags: 0
@@ -896,6 +902,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2633040655368773256, guid: 9f391c48d3aa74a4c9e1b39dee653610,
+        type: 3}
+      propertyPath: m_Name
+      value: Terraformer_A
+      objectReference: {fileID: 0}
     - target: {fileID: 1355910448162811035, guid: 9f391c48d3aa74a4c9e1b39dee653610,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -950,11 +961,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2633040655368773256, guid: 9f391c48d3aa74a4c9e1b39dee653610,
-        type: 3}
-      propertyPath: m_Name
-      value: Terraformer_A
       objectReference: {fileID: 0}
     - target: {fileID: 8193285475692093660, guid: 9f391c48d3aa74a4c9e1b39dee653610,
         type: 3}

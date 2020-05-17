@@ -1,4 +1,4 @@
-﻿using Game.Common;
+﻿using XRFramework.Common;
 
 public class ClientManager : BaseSingleton<ClientManager>
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Game.Common
+namespace XRFramework.Common
 {
     public abstract class BaseSingleton<T> where T : class, new()
     {
@@ -11,6 +11,7 @@ namespace Game.Common
 
         protected BaseSingleton()
         {
+            
         }
 
         private static readonly Lazy<T> lazyInstance = new Lazy<T>(() => new T());

@@ -38,13 +38,14 @@ namespace XCore
             Shader shader = Resources.Load<Shader>("Art/Shaders/OutlineFilter");
             mMaterial = new Material(shader);
             mMaterial.hideFlags = HideFlags.HideAndDontSave;
-            mMaterial.SetFloat("_BlendFactor", blendFactor);
+            mMaterial.SetFloat("_BlendFactor", 0.3f);
             float num = 1f / Camera.main.pixelWidth;
             float num2 = 1f / Camera.main.pixelHeight;
             Vector4 vector = new Vector4(-num, 0f, num, 0f);
             Vector4 vector2 = new Vector4(0f, -num2, 0f, num2);
             mMaterial.SetVector("_TexelOffset0", vector);
             mMaterial.SetVector("_TexelOffset1", vector2);
+
         }
 
         private void OnRenderImage(RenderTexture source, RenderTexture destination)
