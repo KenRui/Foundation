@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using XCore;
+using XRFramework.Common;
 
 public class NetworkRoot : MonoBehaviour
 {
@@ -11,9 +12,25 @@ public class NetworkRoot : MonoBehaviour
 
     private Vector3 offset;
 
+    enum EGameState
+    {
+        init,
+        ready
+    }
+
+    private LWStateMachine<EGameState> gameFsm;
+
     private void Start()
     {
         offset = camera.transform.position - ball.transform.position;
+        gameFsm = new LWStateMachine<EGameState>();
+        gameFsm.Add(EGameState.init, null, () =>
+        {
+            Debug.Log("init state update");
+        }, null);
+        gameFsm.Add(EGameState.ready, null, null, null);
+        
+        gameFsm.SwitchTo(EGameState.init);
     }
 
     public void StartServer()
@@ -53,6 +70,11 @@ public class NetworkRoot : MonoBehaviour
     }
 
     private float ballSpeed = 2.0f;
+
+    private void Update()
+    {
+        gameFsm.Update();
+    }
 
     private void FixedUpdate()
     {

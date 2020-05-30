@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\ServerManager.cs" />
     <Compile Include="Assets\Scripts\XRFramework\Common\BaseSingleton.cs" />
     <Compile Include="Assets\Scripts\XRFramework\Common\IManager.cs" />
+    <Compile Include="Assets\Scripts\XRFramework\Common\LWStateMachine.cs" />
     <Compile Include="Assets\Scripts\XRFramework\Common\ManagersManager.cs" />
     <Compile Include="Assets\TestMono.cs" />
     <None Include="Assets\Resources\Art\Shaders\OutlineFilter.shader" />
